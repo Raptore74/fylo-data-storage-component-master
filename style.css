@@ -27,7 +27,8 @@ body {
 
     align-items: center;
     flex-direction: column;
-    font-family: 14px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
     font-weight: 400;
 }
 
@@ -143,7 +144,6 @@ body {
 
 .pop::before {
     content: "";
-    /* display: block; */
     height: 0;
     width: 0;
     position: absolute;
@@ -159,4 +159,35 @@ body {
     font-size: 2.5em;
     font-weight: 700;
     margin-right: 10px;
+}
+
+@media screen and (max-width: 920px) {
+    .global {
+        width: 375px;
+        height: 667px;
+        background-image: url(/images/bg-mobile.png);
+        grid-template-columns: 25fr 325fr 25fr;
+        grid-template-rows: 126fr 415fr 126fr;
+    }
+
+    .container {
+        grid-template-columns: 325px;
+        grid-template-rows: 200px 160px;
+        grid-gap: 20px;
+    }
+
+    .container__right {
+        height: 100%;
+    }
+
+    .pop {
+        top: 340px;
+        right: calc(50% - 90px);
+        border-radius: 1em 1em 1em 1em;
+    }
+
+    .pop::before {
+        border-top: 15px solid transparent;
+        border-right: 15px solid transparent;
+    }
 }
